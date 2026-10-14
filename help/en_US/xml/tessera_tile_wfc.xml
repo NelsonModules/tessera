@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.tile_wfc</keyword>
+  <short_description>Simple tiled-model synthesis.</short_description>
+  <syntax><syntax_item>R = tessera.tile_wfc(sample, outSize)</syntax_item><syntax_item>R = tessera.tile_wfc(sample, outSize, seed)</syntax_item></syntax>
+  <param_input>
+    <param_input_item><param_name>sample</param_name><param_description>Numeric sample tile map.</param_description></param_input_item>
+    <param_input_item><param_name>outSize</param_name><param_description>Output size: a scalar or [rows cols].</param_description></param_input_item>
+    <param_input_item><param_name>seed</param_name><param_description>Pseudo-random seed (default 0).</param_description></param_input_item>
+  </param_input>
+  <param_output><param_output_item><param_name>R</param_name><param_description>A synthesized tile map using values from sample.</param_description></param_output_item></param_output>
+  <description><p>Learn immediate horizontal and vertical adjacencies from a sample map and synthesize a new map with compatible neighbors.</p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>example 1</example_item_description><example_item_data><![CDATA[sample = [1 1 2; 1 2 2; 3 3 2];
+R = tessera.tile_wfc(sample, [32 32], 1);
+imagesc(R); axis image off]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.wfc">tessera.wfc</link></see_also_item><see_also_item><link linkend="${tessera}tessera.wang_tiles">tessera.wang_tiles</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>initial version</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

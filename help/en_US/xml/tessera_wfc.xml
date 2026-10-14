@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.wfc</keyword>
+  <short_description>Wave function collapse (overlapping model).</short_description>
+  <syntax>
+    <syntax_item>R = tessera.wfc(sample, outsize)</syntax_item>
+    <syntax_item>R = tessera.wfc(sample, outsize, N)</syntax_item>
+    <syntax_item>R = tessera.wfc(sample, outsize, N, seed)</syntax_item>
+    <syntax_item>[R, info, trace] = tessera.wfc(sample, outsize, 'name', value, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sample</param_name>
+      <param_description>Example pattern, an integer matrix to learn from.</param_description>
+    </param_input_item>
+    <param_input_item><param_name>name/value options</param_name><param_description>Use 'N' and 'seed' to configure the tile size and random seed.</param_description></param_input_item>
+    <param_input_item>
+      <param_name>outsize</param_name>
+      <param_description>Output size: a scalar (square) or a [rows cols] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>N</param_name>
+      <param_description>Pattern tile size (default 2).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>The synthesized field, locally resembling the sample everywhere.</param_description>
+    </param_output_item>
+    <param_output_item><param_name>info</param_name><param_description>Diagnostics with success, retries, contradictions, maxEntropy and traceCount.</param_description></param_output_item>
+    <param_output_item><param_name>trace</param_name><param_description>Collapse trace with row, column and remaining pattern count.</param_description></param_output_item>
+  </param_output>
+  <description><p>Synthesize a new field that looks everywhere locally like a small example, using the overlapping-model wave function collapse algorithm. All N-by-N patterns of the sample are learned with their overlap-compatibility rules, then the output is collapsed cell by cell with a lowest-entropy heuristic and constraint propagation, restarting on contradiction. A modern cornerstone of tile-based procedural content generation.</p>
+  <p><img src="../images/wfc.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[sample = [1 2 1 2; 2 1 2 1; 1 2 1 2; 2 1 2 1];
+R = tessera.wfc(sample, [32 32], 2, 1);
+imagesc(R); axis image off]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.maze">tessera.maze</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.cave">tessera.cave</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

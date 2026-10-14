@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.rgb_volume</keyword>
+  <short_description>Convertir un volume scalaire en RGB.</short_description>
+  <syntax><syntax_item>RGB = tessera.rgb_volume(volume)</syntax_item><syntax_item>RGB = tessera.rgb_volume(volume, cmap)</syntax_item></syntax>
+  <param_input><param_input_item><param_name>volume</param_name><param_description>Volume scalaire lignes-par-colonnes-par-plans.</param_description></param_input_item><param_input_item><param_name>cmap</param_name><param_description>Matrice ou nom de colormap.</param_description></param_input_item></param_input>
+  <param_output><param_output_item><param_name>RGB</param_name><param_description>Volume RGB lignes-par-colonnes-par-plans-par-3.</param_description></param_output_item></param_output>
+  <description><p>Applique tessera.rgb a chaque plan d'un volume scalaire 3-D.</p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>exemple 1</example_item_description><example_item_data><![CDATA[V = tessera.fbm3([64 64 12], 'seed', 1);
+RGB = tessera.rgb_volume(V, 'terrain');]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.rgb">tessera.rgb</link></see_also_item><see_also_item><link linkend="${tessera}tessera.rgb_sequence">tessera.rgb_sequence</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>version initiale</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.ridged</keyword>
+  <short_description>Ridged multifractal noise.</short_description>
+  <syntax>
+    <syntax_item>R = tessera.ridged(sz)</syntax_item>
+    <syntax_item>R = tessera.ridged(sz, octaves)</syntax_item>
+    <syntax_item>R = tessera.ridged(sz, octaves, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Field size: a scalar for a square field, or a [rows cols] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>octaves</param_name>
+      <param_description>Number of octaves summed (default 5). More octaves add finer detail.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>The generated field, a rows-by-cols double matrix normalized to [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Ridged multifractal noise: each octave is inverted and squared so that the zero crossings of the noise become sharp ridges. It is the standard way to synthesize mountain ranges and eroded crests. The result is normalized to [0, 1].</p>
+  <p><img src="../images/ridged.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.ridged(256, 6, 1);
+surf(R, 'EdgeColor', 'none'); colormap(tessera.colormap('terrain'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.fbm">tessera.fbm</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.erode">tessera.erode</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.diamond_square">tessera.diamond_square</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

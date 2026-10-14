@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.chaos_game</keyword>
+  <short_description>Iterated function system (chaos game).</short_description>
+  <syntax>
+    <syntax_item>P = tessera.chaos_game(n)</syntax_item>
+    <syntax_item>P = tessera.chaos_game(n, kind)</syntax_item>
+    <syntax_item>P = tessera.chaos_game(n, kind, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>n</param_name>
+      <param_description>Number of points to generate.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>kind</param_name>
+      <param_description>'fern' (Barnsley fern, default) or 'sierpinski' (Sierpinski triangle).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>P</param_name>
+      <param_description>An n-by-2 [x y] point set sampling the attractor.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Sample a self-similar fractal attractor with the chaos game: starting from a point, repeatedly apply a randomly chosen affine map of an iterated function system. 'fern' reproduces Barnsley's fern, 'sierpinski' the Sierpinski triangle.</p>
+  <p><img src="../images/chaos_game.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[P = tessera.chaos_game(60000, 'fern', 1);
+plot(P(:, 1), P(:, 2), '.', 'MarkerSize', 1); axis equal off]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.automaton1d">tessera.automaton1d</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.poisson_disk">tessera.poisson_disk</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.rgb_sequence</keyword>
+  <short_description>Convert scalar frames directly to RGB images.</short_description>
+  <syntax><syntax_item>RGB = tessera.rgb_sequence(frames)</syntax_item><syntax_item>RGB = tessera.rgb_sequence(frames, cmap)</syntax_item></syntax>
+  <param_input><param_input_item><param_name>frames</param_name><param_description>Rows-by-cols-by-frame scalar sequence.</param_description></param_input_item><param_input_item><param_name>cmap</param_name><param_description>Colormap matrix or name.</param_description></param_input_item></param_input>
+  <param_output><param_output_item><param_name>RGB</param_name><param_description>Rows-by-cols-by-3-by-frame RGB sequence.</param_description></param_output_item></param_output>
+  <description><p>Convert every scalar frame to an RGB image in one operation, ready for image sequence or movie generation.</p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>example 1</example_item_description><example_item_data><![CDATA[F = tessera.animate('fbm3_slice', 'frames', 12, 'size', 64);
+RGB = tessera.rgb_sequence(F, 'terrain');]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.rgb">tessera.rgb</link></see_also_item><see_also_item><link linkend="${tessera}tessera.animate">tessera.animate</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>initial version</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

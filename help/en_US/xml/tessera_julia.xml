@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.julia</keyword>
+  <short_description>Julia escape-time fractal.</short_description>
+  <syntax>
+    <syntax_item>R = tessera.julia(sz, c)</syntax_item>
+    <syntax_item>R = tessera.julia(sz, c, maxiter)</syntax_item>
+    <syntax_item>R = tessera.julia(sz, c, maxiter, region)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Field size: a scalar for a square field, or a [rows cols] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>c</param_name>
+      <param_description>The Julia constant, a complex scalar or a [real imag] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>maxiter</param_name>
+      <param_description>Maximum iteration count (default varies per fractal). Higher values resolve finer filaments.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>region</param_name>
+      <param_description>Complex plane window [xmin xmax ymin ymax].</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>Smooth (fractional) escape-iteration count; 0 marks points inside the set.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Render the Julia set of the constant c with smooth escape-time coloring. The iteration z &lt;- z^2 + c is run from z = pixel. maxiter defaults to 100 and region to [-1.6 1.6 -1.2 1.2]. Try c = -0.8 + 0.156i or c = -0.4 + 0.6i.</p>
+  <p><img src="../images/julia.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.julia(600, -0.8 + 0.156i, 300);
+imagesc(R); axis image off; colormap(tessera.colormap('fire'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.mandelbrot">tessera.mandelbrot</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.burningship">tessera.burningship</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

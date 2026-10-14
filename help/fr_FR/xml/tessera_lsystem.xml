@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.lsystem</keyword>
+  <short_description>Developpe une chaine de systeme de Lindenmayer</short_description>
+  <syntax>
+    <syntax_item>S = tessera.lsystem(axiom, rules, iterations)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>axiom</param_name>
+      <param_description>Chaine initiale.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>rules</param_name>
+      <param_description>Un tableau cellule N-par-2 de productions {symbole, remplacement}.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>iterations</param_name>
+      <param_description>Nombre de passes de reecriture.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>S</param_name>
+      <param_description>La chaine developpee, prete pour une interpretation tortue.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Developpe un L-systeme (systeme de Lindenmayer) en reecrivant repetitivement chaque symbole de l'axiome par sa regle de production. Les L-systemes modelisent le branchement recursif des plantes et des courbes remplissantes classiques ; la chaine resultante est typiquement passee a un interprete tortue pour le trace.</p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[S = tessera.lsystem('F', {'F', 'F+F-F-F+F'}, 3);
+disp(length(S))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.chaos_game">tessera.chaos_game</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

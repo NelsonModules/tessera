@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.domain_warp</keyword>
+  <short_description>fBm a deformation de domaine</short_description>
+  <syntax>
+    <syntax_item>R = tessera.domain_warp(sz)</syntax_item>
+    <syntax_item>R = tessera.domain_warp(sz, octaves, strength)</syntax_item>
+    <syntax_item>R = tessera.domain_warp(sz, octaves, strength, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Taille du champ : un scalaire pour un champ carre, ou un vecteur [lignes colonnes].</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>octaves</param_name>
+      <param_description>Nombre d'octaves sommees (defaut 5). Plus d'octaves ajoute du detail fin.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>strength</param_name>
+      <param_description>Intensite du deplacement de deformation (defaut 4). Des valeurs elevees font davantage tourbillonner le champ.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Graine du generateur pseudo-aleatoire (defaut 0). La meme graine reproduit le meme champ.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>Le champ genere, une matrice double lignes-par-colonnes normalisee dans [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>fBm a deformation de domaine (d'apres Inigo Quilez) : un champ fBm dont les coordonnees d'echantillonnage sont elles-memes deplacees par deux autres champs fBm. Cette retroaction produit une structure tourbillonnante et marbree pour la generation de terrains et textures. Le resultat est normalise dans [0, 1].</p>
+  <p><img src="../images/domain_warp.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.domain_warp(256, 5, 4, 1);
+imagesc(R); axis image off; colormap(tessera.colormap('ice'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.fbm">tessera.fbm</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.turbulence">tessera.turbulence</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

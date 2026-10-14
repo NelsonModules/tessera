@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.maze</keyword>
+  <short_description>Labyrinthe par retour sur trace recursif</short_description>
+  <syntax>
+    <syntax_item>R = tessera.maze(rows, cols)</syntax_item>
+    <syntax_item>R = tessera.maze(rows, cols, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>rows</param_name>
+      <param_description>Nombre de cellules du labyrinthe en vertical.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>cols</param_name>
+      <param_description>Nombre de cellules du labyrinthe en horizontal.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Graine du generateur pseudo-aleatoire (defaut 0). La meme graine reproduit le meme champ.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>Une carte (2*rows+1)-par-(2*cols+1), 1 = mur, 0 = passage.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Genere un labyrinthe parfait (un unique chemin entre deux cellules quelconques, sans boucle) par l'algorithme de retour sur trace recursif. Les murs occupent les lignes et colonnes paires de la grille renvoyee ; les passages les impaires.</p>
+  <p><img src="../images/maze.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.maze(25, 25, 1);
+imagesc(R); axis image off; colormap(gray(2))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.cave">tessera.cave</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.wfc">tessera.wfc</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

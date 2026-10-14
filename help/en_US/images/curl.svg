@@ -1,0 +1,46 @@
+<svg width="1074.56" height="646.4" viewBox="0 0 1679 1010" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Curl noise flow field">
+<defs>
+<pattern id="grid" width="84" height="84" patternUnits="userSpaceOnUse">
+<path d="M 84 0 L 0 0 0 84" fill="none" stroke="#dbeafe" stroke-width="2" opacity="0.55"/>
+</pattern>
+<marker id="arrow-cyan" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#0891b2"/>
+</marker>
+<marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+</marker>
+<marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+</marker>
+<marker id="arrow-violet" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+</marker>
+</defs>
+<rect width="1679" height="1010" fill="#f8fafc"/>
+<rect width="1679" height="1010" fill="url(#grid)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 110 170 C 310 20 570 90 720 300 S 1120 700 1550 320" stroke="#0891b2" stroke-width="12" opacity="0.78" marker-end="url(#arrow-cyan)"/>
+<path d="M 90 390 C 290 170 580 210 735 420 S 1120 850 1570 560" stroke="#0f766e" stroke-width="10" opacity="0.72" marker-end="url(#arrow-teal)"/>
+<path d="M 125 650 C 370 420 600 450 770 620 S 1170 930 1535 760" stroke="#ea580c" stroke-width="11" opacity="0.72" marker-end="url(#arrow-orange)"/>
+<path d="M 180 850 C 380 690 590 700 800 810 S 1190 940 1490 870" stroke="#7c3aed" stroke-width="9" opacity="0.68" marker-end="url(#arrow-violet)"/>
+<path d="M 250 90 C 470 260 570 420 520 625 S 610 940 930 950" stroke="#0f766e" stroke-width="8" opacity="0.58" marker-end="url(#arrow-teal)"/>
+<path d="M 470 80 C 690 260 750 410 680 600 S 770 890 1100 960" stroke="#0891b2" stroke-width="8" opacity="0.56" marker-end="url(#arrow-cyan)"/>
+<path d="M 820 60 C 1040 250 1060 420 930 575 S 910 860 1320 950" stroke="#ea580c" stroke-width="8" opacity="0.56" marker-end="url(#arrow-orange)"/>
+<path d="M 1110 80 C 1320 240 1320 410 1160 545 S 1120 800 1510 900" stroke="#7c3aed" stroke-width="8" opacity="0.56" marker-end="url(#arrow-violet)"/>
+<path d="M 430 495 C 500 290 750 220 940 305 C 1130 390 1190 610 1050 760 C 910 910 650 875 555 690 C 505 590 510 520 550 445" stroke="#0f766e" stroke-width="13" opacity="0.85" marker-end="url(#arrow-teal)"/>
+<path d="M 570 505 C 635 375 805 330 930 395 C 1050 460 1070 605 980 700 C 875 810 685 765 625 655 C 590 590 600 540 630 495" stroke="#ea580c" stroke-width="10" opacity="0.78" marker-end="url(#arrow-orange)"/>
+<path d="M 705 505 C 755 450 845 440 900 485 C 950 530 930 615 865 640 C 785 670 720 625 720 565" stroke="#7c3aed" stroke-width="9" opacity="0.76" marker-end="url(#arrow-violet)"/>
+</g>
+<g fill="none" stroke-width="5" stroke-linecap="round" opacity="0.78">
+<path d="M 240 245 L 320 195" stroke="#0891b2" marker-end="url(#arrow-cyan)"/>
+<path d="M 390 315 L 470 300" stroke="#0f766e" marker-end="url(#arrow-teal)"/>
+<path d="M 1210 275 L 1290 235" stroke="#ea580c" marker-end="url(#arrow-orange)"/>
+<path d="M 1370 460 L 1450 420" stroke="#7c3aed" marker-end="url(#arrow-violet)"/>
+<path d="M 330 715 L 395 665" stroke="#ea580c" marker-end="url(#arrow-orange)"/>
+<path d="M 1240 735 L 1320 700" stroke="#0891b2" marker-end="url(#arrow-cyan)"/>
+<path d="M 560 820 L 625 850" stroke="#0f766e" marker-end="url(#arrow-teal)"/>
+<path d="M 1000 835 L 1075 865" stroke="#7c3aed" marker-end="url(#arrow-violet)"/>
+</g>
+<circle cx="835" cy="550" r="15" fill="#0f172a"/>
+<circle cx="835" cy="550" r="34" fill="none" stroke="#0f172a" stroke-width="4" opacity="0.35"/>
+</svg>

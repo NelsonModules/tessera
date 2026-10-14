@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <module_name>tessera</module_name>
+  <chapter>tessera</chapter>
+  <chapter_description>Procedural generation: 2-D and 3-D coherent noise (Perlin, simplex, value, Worley), tileable fields, fractal composition (fBm, ridged, billow, turbulence, domain warp), spectral noise, escape-time fractals (Mandelbrot, Julia, Burning Ship, Newton), terrain (diamond-square, hydraulic erosion), cellular automata and reaction-diffusion, turtle-interpreted L-systems, structure generation (Voronoi, Lloyd relaxation, DLA, Wang tiles, tiled WFC, caves, mazes, iterated function systems, wave function collapse) and low-discrepancy sampling. Native, dependency-free C++ exposed under the tessera namespace.</chapter_description>
+</xmldoc>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.poisson_disk</keyword>
+  <short_description>Echantillonnage bleu de Bridson</short_description>
+  <syntax>
+    <syntax_item>P = tessera.poisson_disk(width, height, radius)</syntax_item>
+    <syntax_item>P = tessera.poisson_disk(width, height, radius, k)</syntax_item>
+    <syntax_item>P = tessera.poisson_disk(width, height, radius, k, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>width</param_name>
+      <param_description>Largeur du domaine.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>height</param_name>
+      <param_description>Hauteur du domaine.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>radius</param_name>
+      <param_description>Distance minimale entre deux echantillons quelconques.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>k</param_name>
+      <param_description>Candidats essayes par echantillon actif (defaut 30).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Graine du generateur pseudo-aleatoire (defaut 0). La meme graine reproduit le meme champ.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>P</param_name>
+      <param_description>Une matrice N-par-2 [x y] des points echantillonnes.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Tire un ensemble de points en bruit bleu par l'algorithme de Poisson-disk de Bridson : les points sont repartis aleatoirement mais uniformement, de sorte qu'aucun ne soit plus proche qu'une distance radius. Ideal pour disperser des objets de maniere naturelle, le pointillisme et l'echantillonnage perturbe.</p>
+  <p><img src="../images/poisson_disk.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[P = tessera.poisson_disk(500, 500, 12);
+plot(P(:, 1), P(:, 2), '.'); axis equal]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.halton">tessera.halton</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.voronoi">tessera.voronoi</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

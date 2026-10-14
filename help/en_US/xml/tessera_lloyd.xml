@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.lloyd</keyword>
+  <short_description>Voronoi map after Lloyd relaxation.</short_description>
+  <syntax><syntax_item>R = tessera.lloyd(sz)</syntax_item><syntax_item>R = tessera.lloyd(sz, cells, iterations, seed)</syntax_item><syntax_item>[R, sites] = tessera.lloyd(sz, 'name', value, ...)</syntax_item></syntax>
+  <param_input>
+    <param_input_item><param_name>sz</param_name><param_description>Output size: a scalar or [rows cols].</param_description></param_input_item>
+    <param_input_item><param_name>cells</param_name><param_description>Number of sites per dimension hint (default 8).</param_description></param_input_item>
+    <param_input_item><param_name>iterations</param_name><param_description>Number of centroid relaxation steps (default 2).</param_description></param_input_item>
+    <param_input_item><param_name>seed</param_name><param_description>Pseudo-random seed (default 0).</param_description></param_input_item>
+  </param_input>
+  <param_output><param_output_item><param_name>R</param_name><param_description>A cell-id map.</param_description></param_output_item><param_output_item><param_name>sites</param_name><param_description>Final site coordinates as a cells-by-2 matrix in pixel coordinates.</param_description></param_output_item></param_output>
+  <description><p>Relax Voronoi sites toward their centroids, then return the resulting cell-id map.</p>
+  <p><img src="../images/lloyd.svg" align="middle" /></p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>example 1</example_item_description><example_item_data><![CDATA[R = tessera.lloyd(128, 12, 3, 1);
+imagesc(R); axis image off]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.voronoi">tessera.voronoi</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>initial version</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

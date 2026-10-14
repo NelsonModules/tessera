@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.demo</keyword>
+  <short_description>Affiche une galerie de generateurs tessera</short_description>
+  <syntax>
+    <syntax_item>tessera.demo()</syntax_item>
+    <syntax_item>f = tessera.demo()</syntax_item>
+  </syntax>
+  <param_input>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>f</param_name>
+      <param_description>Handle de la figure creee.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Affiche une galerie 3-par-3 de generateurs tessera representatifs (Perlin, fBm, ridged, Worley, Voronoi, domain warp, Mandelbrot, Julia et reaction-diffusion) dans une seule figure et renvoie son handle. Necessite une session graphique.</p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[tessera.demo();]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.colormap">tessera.colormap</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

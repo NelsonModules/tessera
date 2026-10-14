@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.automaton1d</keyword>
+  <short_description>Automate cellulaire elementaire de Wolfram</short_description>
+  <syntax>
+    <syntax_item>A = tessera.automaton1d(rule, width, generations)</syntax_item>
+    <syntax_item>A = tessera.automaton1d(rule, width, generations, init)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>rule</param_name>
+      <param_description>Numero de regle de Wolfram, un entier dans [0, 255].</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>width</param_name>
+      <param_description>Nombre de cellules par ligne (torique).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>generations</param_name>
+      <param_description>Nombre de lignes (pas de temps) a calculer.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>init</param_name>
+      <param_description>Premiere ligne optionnelle (longueur width) ; par defaut une seule cellule centrale.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>A</param_name>
+      <param_description>Une matrice 0/1 generations-par-width, une ligne par pas de temps.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Execute un automate cellulaire elementaire de Wolfram (unidimensionnel, a deux etats, plus proches voisins) et empile ses lignes successives en une image. La regle 30 est chaotique, la regle 90 dessine le triangle de Sierpinski, la regle 110 est Turing-complete.</p>
+  <p><img src="../images/automaton1d.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[A = tessera.automaton1d(30, 201, 100);
+imagesc(A); axis image off; colormap(gray(2))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.gameoflife">tessera.gameoflife</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.chaos_game">tessera.chaos_game</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

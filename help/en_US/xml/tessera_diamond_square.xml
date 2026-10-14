@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.diamond_square</keyword>
+  <short_description>Diamond-square heightfield.</short_description>
+  <syntax>
+    <syntax_item>R = tessera.diamond_square(n)</syntax_item>
+    <syntax_item>R = tessera.diamond_square(n, roughness)</syntax_item>
+    <syntax_item>R = tessera.diamond_square(n, roughness, seed)</syntax_item>
+    <syntax_item>R = tessera.diamond_square(n, 'roughness', r, 'seed', s, 'seamless', tf)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>n</param_name>
+      <param_description>Resolution exponent: the field is (2^n)+1 on a side.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>roughness</param_name>
+      <param_description>Amplitude falloff per subdivision (default 0.5); lower is rougher.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seamless</param_name>
+      <param_description>If true, keep opposite edges matched (default true).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>A ((2^n)+1)-by-((2^n)+1) heightfield normalized to [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Generate a heightfield with the diamond-square (midpoint-displacement) algorithm: corners are seeded, then diamond and square steps repeatedly set midpoints to a neighborhood average plus a shrinking random offset. Opposite edges are matched for tileable terrain by default. Fast and classic for terrain, though with mild axis-aligned artifacts (see tessera.ridged for an alternative).</p>
+  <p><img src="../images/diamond_square.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.diamond_square(9, 0.6, 1);
+surf(R, 'EdgeColor', 'none'); colormap(tessera.colormap('terrain'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.ridged">tessera.ridged</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.fbm">tessera.fbm</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.erode">tessera.erode</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

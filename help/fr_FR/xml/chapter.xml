@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <module_name>tessera</module_name>
+  <chapter>tessera</chapter>
+  <chapter_description>Generation procedurale : bruit coherent 2D et 3D (Perlin, simplex, valeur, Worley), champs tuilables, composition fractale (fBm, ridged, billow, turbulence, domain warp), bruit spectral, fractales a temps d'echappement (Mandelbrot, Julia, Burning Ship, Newton), terrain (diamant-carre, erosion hydraulique), automates cellulaires et reaction-diffusion, L-systemes interpretes par tortue, generation de structures (Voronoi, relaxation de Lloyd, DLA, tuiles de Wang, WFC tuile, grottes, labyrinthes, systemes de fonctions iterees, effondrement de fonction d'onde) et echantillonnage a faible discrepance. C++ natif sans dependance expose sous l'espace de noms tessera.</chapter_description>
+</xmldoc>

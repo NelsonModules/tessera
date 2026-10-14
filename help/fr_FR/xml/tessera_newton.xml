@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.newton</keyword>
+  <short_description>Fractale de Newton pour z^3 - 1</short_description>
+  <syntax>
+    <syntax_item>root = tessera.newton(sz)</syntax_item>
+    <syntax_item>[root, iter] = tessera.newton(sz, maxiter)</syntax_item>
+    <syntax_item>[root, iter] = tessera.newton(sz, maxiter, region)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Taille du champ : un scalaire pour un champ carre, ou un vecteur [lignes colonnes].</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>maxiter</param_name>
+      <param_description>Nombre maximal d'iterations de Newton (defaut 50).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>region</param_name>
+      <param_description>Fenetre du plan complexe [xmin xmax ymin ymax].</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>root</param_name>
+      <param_description>Indice (1..3) de la racine vers laquelle chaque pixel a converge, ou 0 sinon.</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>iter</param_name>
+      <param_description>Nombre d'iterations a la convergence (ombrage des frontieres de bassins).</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Rend la fractale de Newton du polynome p(z) = z^3 - 1. Chaque pixel est itere par la methode de Newton et colore selon laquelle des trois racines cubiques de l'unite il converge ; la seconde sortie donne le nombre d'iterations pour ombrer les frontieres des bassins fractals. maxiter vaut 50 par defaut et region [-2 2 -2 2].</p>
+  <p><img src="../images/newton.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[[root, iter] = tessera.newton(600);
+imagesc(root); axis image off; colormap(jet(4))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.mandelbrot">tessera.mandelbrot</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.julia">tessera.julia</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

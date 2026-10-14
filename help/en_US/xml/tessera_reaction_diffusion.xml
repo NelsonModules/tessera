@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.reaction_diffusion</keyword>
+  <short_description>Gray-Scott reaction-diffusion.</short_description>
+  <syntax>
+    <syntax_item>R = tessera.reaction_diffusion(sz)</syntax_item>
+    <syntax_item>R = tessera.reaction_diffusion(sz, steps)</syntax_item>
+    <syntax_item>R = tessera.reaction_diffusion(sz, steps, feed, kill, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Field size: a scalar for a square field, or a [rows cols] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>steps</param_name>
+      <param_description>Number of simulation steps (default 2000).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>feed</param_name>
+      <param_description>Feed rate of the Gray-Scott model (default 0.055).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>kill</param_name>
+      <param_description>Kill rate of the Gray-Scott model (default 0.062).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>The generated field, a rows-by-cols double matrix normalized to [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Simulate the Gray-Scott reaction-diffusion system from a few random seed patches. Two virtual chemicals diffuse and react, self-organizing into spots, stripes, mazes and mitosis-like patterns depending on feed and kill. The normalized final concentration is returned in [0, 1].</p>
+  <p><img src="../images/reaction_diffusion.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.reaction_diffusion(256, 4000, 0.055, 0.062, 1);
+imagesc(R); axis image off; colormap(tessera.colormap('ice'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.gameoflife">tessera.gameoflife</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.worley">tessera.worley</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.worley</keyword>
+  <short_description>Worley (cellular) noise.</short_description>
+  <syntax>
+    <syntax_item>R = tessera.worley(sz)</syntax_item>
+    <syntax_item>R = tessera.worley(sz, cells)</syntax_item>
+    <syntax_item>R = tessera.worley(sz, cells, seed)</syntax_item>
+    <syntax_item>R = tessera.worley(sz, 'cells', c, 'feature', f, 'metric', m, 'seamless', tf)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Field size: a scalar for a square field, or a [rows cols] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>cells</param_name>
+      <param_description>Number of feature points per axis (default 8).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>feature</param_name>
+      <param_description>Output feature: 'f1' (default), 'f2', or 'f2-f1' for edge patterns.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>metric</param_name>
+      <param_description>Distance metric: 'euclidean' (default), 'manhattan', or 'chebyshev'.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seamless</param_name>
+      <param_description>If true, wrap feature cells on a periodic lattice (default false).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>The generated field, a rows-by-cols double matrix normalized to [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Generate Worley (cellular) noise: each pixel holds a feature-distance measurement from a jittered grid of points. F1 produces cellular blobs, F2 expands the second-nearest field, and F2-F1 emphasizes cell borders. Manhattan and chebyshev metrics create blockier pattern families. The result is normalized to [0, 1].</p>
+  <p><img src="../images/worley.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.worley(256, 'cells', 12, 'seed', 1, 'feature', 'f2-f1', 'metric', 'chebyshev');
+imagesc(R); axis image off]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.voronoi">tessera.voronoi</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.perlin">tessera.perlin</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

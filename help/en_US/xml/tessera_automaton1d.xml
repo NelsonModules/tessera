@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.automaton1d</keyword>
+  <short_description>Wolfram elementary cellular automaton.</short_description>
+  <syntax>
+    <syntax_item>A = tessera.automaton1d(rule, width, generations)</syntax_item>
+    <syntax_item>A = tessera.automaton1d(rule, width, generations, init)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>rule</param_name>
+      <param_description>Wolfram rule number, an integer in [0, 255].</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>width</param_name>
+      <param_description>Number of cells per row (toroidal).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>generations</param_name>
+      <param_description>Number of rows (time steps) to compute.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>init</param_name>
+      <param_description>Optional first row (length width); default is a single centered cell.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>A</param_name>
+      <param_description>A generations-by-width 0/1 matrix, one row per time step.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Run a Wolfram elementary (one-dimensional, two-state, nearest-neighbor) cellular automaton and stack its successive rows into an image. Rule 30 is chaotic, rule 90 draws the Sierpinski triangle, rule 110 is Turing-complete.</p>
+  <p><img src="../images/automaton1d.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[A = tessera.automaton1d(30, 201, 100);
+imagesc(A); axis image off; colormap(gray(2))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.gameoflife">tessera.gameoflife</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.chaos_game">tessera.chaos_game</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

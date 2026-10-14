@@ -1,0 +1,51 @@
+{
+  "module": "tessera",
+  "title": "tessera",
+  "version": "1.0.0",
+  "author": "Allan CORNET",
+  "summary": "Procedural generation for Nelson.",
+  "description": "Procedural generation for Nelson: 2-D and 3-D coherent noise (Perlin, simplex, value, Worley), tileable fields, fractal composition (fBm, ridged, billow, turbulence, domain warp), spectral noise, escape-time fractals (Mandelbrot, Julia, Burning Ship, Newton), terrain (diamond-square, hydraulic erosion), cellular automata and reaction-diffusion, turtle-interpreted L-systems, structure generation (Voronoi, Lloyd relaxation, DLA, Wang tiles, tiled WFC, caves, mazes, iterated function systems, wave function collapse) and low-discrepancy sampling.",
+  "license": "LGPL-3.0-or-later",
+  "builtin": true,
+  "platforms": [
+    "win64"
+  ],
+  "nelson": ">=2.0.0",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NelsonModules/tessera.git"
+  },
+  "homepage": "https://github.com/NelsonModules/tessera",
+  "bugs": {
+    "url": "https://github.com/NelsonModules/tessera/issues"
+  },
+  "keywords": [
+    "nelson",
+    "tessera",
+    "procedural-generation",
+    "noise",
+    "perlin",
+    "simplex",
+    "worley",
+    "seamless",
+    "volume-noise",
+    "gabor",
+    "wavelet",
+    "fractal",
+    "mandelbrot",
+    "terrain",
+    "erosion",
+    "cellular-automaton",
+    "reaction-diffusion",
+    "voronoi",
+    "lloyd",
+    "dla",
+    "wang-tiles",
+    "l-system",
+    "turtle",
+    "maze",
+    "wave-function-collapse",
+    "poisson-disk"
+  ]
+}

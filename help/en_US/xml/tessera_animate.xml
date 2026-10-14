@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.animate</keyword>
+  <short_description>Real-time procedural-generation animation.</short_description>
+  <syntax>
+    <syntax_item>tessera.animate(kind)</syntax_item>
+    <syntax_item>tessera.animate(kind, frames)</syntax_item>
+    <syntax_item>tessera.animate(kind, name, value, ...)</syntax_item>
+    <syntax_item>f = tessera.animate(...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>kind</param_name>
+      <param_description>'julia', 'mandelbrot_zoom', 'life', 'reaction', 'fbm3_slice', 'worley_edges', 'turtle', 'curl_particles', 'dla_growth', 'lloyd_relaxation', 'gabor_sweep', 'wavelet_sweep' or 'wang_scroll'.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>frames</param_name>
+      <param_description>Number of animation frames (default 200).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>size</param_name>
+      <param_description>Scalar or two-element image size.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>palette</param_name>
+      <param_description>Colormap name or an N-by-3 colormap.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Integer seed for stochastic animations.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>output</param_name>
+      <param_description>Optional animated GIF file name.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>f</param_name>
+      <param_description>Handle of the created figure.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Play a real-time animation in a figure by updating graphics in place with drawnow: a morphing Julia set, an endless Mandelbrot zoom, Conway's game of life, reaction-diffusion, seamless 3-D fBm slices, Worley F2-F1 edge textures, a progressive L-system turtle curve, curl-particle advection, DLA growth, Lloyd relaxation, Gabor frequency sweep, wavelet octave sweep, or Wang tile scrolling. The optional output name writes an animated GIF. Requires a graphics-capable session.</p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[tessera.animate('wavelet_sweep', 'frames', 60, 'size', 160, ...
+  'palette', 'ice', 'seed', 3, 'output', 'wavelet.gif');]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.demo">tessera.demo</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.julia">tessera.julia</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.gameoflife">tessera.gameoflife</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

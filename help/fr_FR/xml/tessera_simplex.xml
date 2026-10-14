@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.simplex</keyword>
+  <short_description>Bruit simplex</short_description>
+  <syntax>
+    <syntax_item>R = tessera.simplex(sz)</syntax_item>
+    <syntax_item>R = tessera.simplex(sz, frequency)</syntax_item>
+    <syntax_item>R = tessera.simplex(sz, frequency, seed)</syntax_item>
+    <syntax_item>R = tessera.simplex(sz, 'frequency', f, 'seed', s, 'seamless', tf)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Taille du champ : un scalaire pour un champ carre, ou un vecteur [lignes colonnes].</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>frequency</param_name>
+      <param_description>Nombre de cellules de bruit sur le champ (defaut 8). Des valeurs elevees donnent des motifs plus fins.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Graine du generateur pseudo-aleatoire (defaut 0). La meme graine reproduit le meme champ.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seamless</param_name>
+      <param_description>Si vrai, fait correspondre les bords opposes pour textures tuilables (defaut false).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>Le champ genere, une matrice double lignes-par-colonnes normalisee dans [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Genere un champ de bruit simplex. Construit sur un reseau simplexe (triangulaire) plutot qu'une grille carree, il evite les artefacts directionnels alignes sur les axes du bruit de Perlin classique et s'etend plus economiquement aux dimensions superieures. Le resultat est normalise dans [0, 1].</p>
+  <p><img src="../images/simplex.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[R = tessera.simplex(256, 8, 1);
+imagesc(R); axis image off]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.perlin">tessera.perlin</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.fbm">tessera.fbm</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

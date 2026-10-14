@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.turtle_render</keyword>
+  <short_description>Styled L-system turtle rendering.</short_description>
+  <syntax><syntax_item>[P, W, C] = tessera.turtle_render(commands, angle, step, 'name', value, ...)</syntax_item></syntax>
+  <param_input>
+    <param_input_item><param_name>commands</param_name><param_description>L-system command string.</param_description></param_input_item>
+    <param_input_item><param_name>angle</param_name><param_description>Turn angle in degrees.</param_description></param_input_item>
+    <param_input_item><param_name>step</param_name><param_description>Default forward step length.</param_description></param_input_item>
+    <param_input_item><param_name>width</param_name><param_description>Default pen width.</param_description></param_input_item>
+    <param_input_item><param_name>color</param_name><param_description>Default RGB pen color.</param_description></param_input_item>
+    <param_input_item><param_name>symbol_steps</param_name><param_description>Struct mapping symbols to step lengths.</param_description></param_input_item>
+    <param_input_item><param_name>symbol_widths</param_name><param_description>Struct mapping symbols to widths.</param_description></param_input_item>
+    <param_input_item><param_name>symbol_colors</param_name><param_description>Struct mapping symbols to RGB colors.</param_description></param_input_item>
+  </param_input>
+  <param_output><param_output_item><param_name>P</param_name><param_description>Polyline vertices with NaN rows separating branches.</param_description></param_output_item><param_output_item><param_name>W</param_name><param_description>Width for every vertex.</param_description></param_output_item><param_output_item><param_name>C</param_name><param_description>RGB color for every vertex.</param_description></param_output_item></param_output>
+  <description><p>Interpret a turtle command string with branch stacks and per-symbol styling. F and G draw, f moves without drawing, and &gt; and &lt; change the current width.</p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>example 1</example_item_description><example_item_data><![CDATA[[S, W, C] = tessera.turtle_render('F[+F]F[-F]F', 25, 1, 'width', 2, 'symbol_colors', struct('F', [0.1 0.5 0.2]));
+plot(S(:, 1), S(:, 2)); axis equal off]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.turtle">tessera.turtle</link></see_also_item><see_also_item><link linkend="${tessera}tessera.lsystem">tessera.lsystem</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>initial version</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

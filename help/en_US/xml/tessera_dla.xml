@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.dla</keyword>
+  <short_description>Diffusion-limited aggregation.</short_description>
+  <syntax><syntax_item>R = tessera.dla(sz)</syntax_item><syntax_item>R = tessera.dla(sz, particles, seed)</syntax_item><syntax_item>R = tessera.dla(sz, 'name', value, ...)</syntax_item></syntax>
+  <param_input>
+    <param_input_item><param_name>sz</param_name><param_description>Output size: a scalar or [rows cols].</param_description></param_input_item>
+    <param_input_item><param_name>particles</param_name><param_description>Number of random walkers to aggregate (default 500).</param_description></param_input_item>
+    <param_input_item><param_name>seed</param_name><param_description>Pseudo-random seed (default 0).</param_description></param_input_item>
+    <param_input_item><param_name>obstacles</param_name><param_description>Binary mask of occupied cells that block walkers.</param_description></param_input_item>
+    <param_input_item><param_name>seeds</param_name><param_description>N-by-2 seed coordinates; several aggregates can start at once.</param_description></param_input_item>
+    <param_input_item><param_name>direction</param_name><param_description>Two-element attraction direction for biased walkers.</param_description></param_input_item>
+    <param_input_item><param_name>periodic</param_name><param_description>Wrap walkers at the image borders (default false).</param_description></param_input_item>
+  </param_input>
+  <param_output><param_output_item><param_name>R</param_name><param_description>A binary aggregate image.</param_description></param_output_item></param_output>
+  <description><p>Grow a cluster from a central seed by random walkers that stick when they touch the aggregate.</p>
+  <p><img src="../images/dla.svg" align="middle" /></p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>example 1</example_item_description><example_item_data><![CDATA[R = tessera.dla(128, 1000, 1);
+imagesc(R); axis image off]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.voronoi">tessera.voronoi</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>initial version</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

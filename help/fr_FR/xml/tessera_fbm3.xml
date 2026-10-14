@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.fbm3</keyword>
+  <short_description>Mouvement brownien fractionnaire 3D.</short_description>
+  <syntax><syntax_item>V = tessera.fbm3(sz)</syntax_item><syntax_item>V = tessera.fbm3(sz, octaves, seed)</syntax_item><syntax_item>V = tessera.fbm3(sz, 'octaves', o, 'frequency', f, 'lacunarity', l, 'gain', g, 'seed', s, 'seamless', tf)</syntax_item></syntax>
+  <param_input>
+    <param_input_item><param_name>sz</param_name><param_description>Taille du volume : scalaire ou [rows cols planes].</param_description></param_input_item>
+    <param_input_item><param_name>octaves</param_name><param_description>Nombre d'octaves (defaut 5).</param_description></param_input_item>
+    <param_input_item><param_name>frequency</param_name><param_description>Frequence de base (defaut 4).</param_description></param_input_item>
+    <param_input_item><param_name>lacunarity</param_name><param_description>Multiplicateur de frequence par octave (defaut 2).</param_description></param_input_item>
+    <param_input_item><param_name>gain</param_name><param_description>Multiplicateur d'amplitude par octave (defaut 0.5).</param_description></param_input_item>
+    <param_input_item><param_name>seed</param_name><param_description>Graine pseudo-aleatoire (defaut 0).</param_description></param_input_item>
+    <param_input_item><param_name>seamless</param_name><param_description>Si vrai, les faces opposees du volume correspondent.</param_description></param_input_item>
+  </param_input>
+  <param_output><param_output_item><param_name>V</param_name><param_description>Volume double rows-par-cols-par-planes normalise dans [0, 1].</param_description></param_output_item></param_output>
+  <description><p>Additionne plusieurs octaves de bruit coherent 3D pour terrain volumique, nuages ou animation par tranches.</p>
+  <p><img src="../images/fbm3.svg" align="middle" /></p></description>
+  <used_function></used_function><bibliography></bibliography>
+  <examples><example_item><example_item_type>nelson</example_item_type><example_item_description>exemple 1</example_item_description><example_item_data><![CDATA[V = tessera.fbm3([64 64 24], 'octaves', 5, 'seed', 42, 'seamless', true);
+imagesc(V(:, :, 1)); axis image off]]></example_item_data></example_item></examples>
+  <see_also><see_also_item><link linkend="${tessera}tessera.fbm">tessera.fbm</link></see_also_item><see_also_item><link linkend="${tessera}tessera.perlin3">tessera.perlin3</link></see_also_item></see_also>
+  <history><history_item><history_version>1.0.0</history_version><history_description>version initiale</history_description></history_item></history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

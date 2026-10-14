@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.gameoflife</keyword>
+  <short_description>Jeu de la vie de Conway</short_description>
+  <syntax>
+    <syntax_item>G = tessera.gameoflife(grid)</syntax_item>
+    <syntax_item>G = tessera.gameoflife(grid, generations)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>grid</param_name>
+      <param_description>Etat initial, une matrice 0/1 (ou logique).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>generations</param_name>
+      <param_description>Nombre de pas a avancer (defaut 1).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>G</param_name>
+      <param_description>La grille apres le nombre de generations demande.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Fait evoluer le jeu de la vie de Conway sur une grille torique (a bord periodique). Une cellule vivante survit avec deux ou trois voisines vivantes ; une cellule morte nait avec exactement trois. Classique pour les motifs emergents, planeurs et oscillateurs.</p>
+  <p><img src="../images/gameoflife.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[g = zeros(32); g(16, 15:17) = 1;
+g = tessera.gameoflife(g, 1);
+spy(g)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.automaton1d">tessera.automaton1d</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.cave">tessera.cave</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

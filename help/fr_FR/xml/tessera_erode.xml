@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.erode</keyword>
+  <short_description>Erosion hydraulique d'un relief</short_description>
+  <syntax>
+    <syntax_item>R = tessera.erode(heightfield, droplets)</syntax_item>
+    <syntax_item>R = tessera.erode(heightfield, droplets, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>heightfield</param_name>
+      <param_description>Relief d'entree (matrice numerique, au moins 2x2).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>droplets</param_name>
+      <param_description>Nombre de gouttelettes d'eau a simuler. Plus de gouttelettes accentue l'erosion.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Graine du generateur pseudo-aleatoire (defaut 0). La meme graine reproduit le meme champ.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>R</param_name>
+      <param_description>Le relief erode, normalise dans [0, 1].</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Sculpte un relief existant par erosion hydraulique a base de gouttelettes. Chaque goutte descend le gradient, arrachant des sediments sur les pentes raides et les deposant la ou elle ralentit, produisant vallees, cretes et cones de dejection realistes. A alimenter avec un champ tessera.ridged ou tessera.diamond_square.</p>
+  <p><img src="../images/erode.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[H = tessera.ridged(256, 7, 3);
+E = tessera.erode(H, 50000, 1);
+surf(E, 'EdgeColor', 'none'); colormap(tessera.colormap('terrain'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.ridged">tessera.ridged</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.diamond_square">tessera.diamond_square</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.fbm">tessera.fbm</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

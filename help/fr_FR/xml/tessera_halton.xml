@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>fr_FR</language>
+  <keyword>tessera.halton</keyword>
+  <short_description>Suite a faible discrepance de Halton</short_description>
+  <syntax>
+    <syntax_item>P = tessera.halton(n)</syntax_item>
+    <syntax_item>P = tessera.halton(n, dims)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>n</param_name>
+      <param_description>Nombre de points a generer.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>dims</param_name>
+      <param_description>Nombre de dimensions (defaut 2, maximum 16).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>P</param_name>
+      <param_description>Une matrice n-par-dims de points quasi-aleatoires dans [0, 1).</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Genere une suite de Halton a faible discrepance (quasi-aleatoire). Les points remplissent l'espace bien plus uniformement que des tirages uniformes independants, ce qui les rend excellents pour l'echantillonnage, l'integration quasi-Monte-Carlo et le placement perturbe. Chaque dimension utilise l'inverse radical dans une base premiere distincte.</p>
+  <p><img src="../images/halton.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>exemple 1</example_item_description>
+      <example_item_data><![CDATA[P = tessera.halton(500, 2);
+plot(P(:, 1), P(:, 2), '.'); axis square]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.poisson_disk">tessera.poisson_disk</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmldoc>
+  <copyright>LGPL-3.0-or-later</copyright>
+  <language>en_US</language>
+  <keyword>tessera.curl</keyword>
+  <short_description>Divergence-free curl (flow) noise.</short_description>
+  <syntax>
+    <syntax_item>[U, V] = tessera.curl(sz)</syntax_item>
+    <syntax_item>[U, V] = tessera.curl(sz, frequency)</syntax_item>
+    <syntax_item>[U, V] = tessera.curl(sz, frequency, seed)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>sz</param_name>
+      <param_description>Field size: a scalar for a square field, or a [rows cols] vector.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>frequency</param_name>
+      <param_description>Number of noise cells across the field (default 8). Higher values give finer features.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>seed</param_name>
+      <param_description>Seed of the pseudo-random generator (default 0). The same seed reproduces the same field.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>U</param_name>
+      <param_description>Horizontal flow component, a rows-by-cols matrix.</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>V</param_name>
+      <param_description>Vertical flow component, a rows-by-cols matrix.</param_description>
+    </param_output_item>
+  </param_output>
+  <description><p>Generate curl noise: a divergence-free (mass-conserving) 2-D vector field obtained as the curl of a Perlin potential, (U, V) = (dP/dy, -dP/dx). Because the field has no sources or sinks, particles advected along it swirl smoothly without ever bunching up, which is the standard way to drive natural-looking flow and particle motion. frequency defaults to 8, seed to 0.</p>
+  <p><img src="../images/curl.svg" align="middle" /></p></description>
+  <used_function></used_function>
+  <bibliography>M. Hendrikx, S. Meijer, J. van der Velden, A. Iosup, Procedural Content Generation for Games: A Survey, ACM Transactions on Multimedia Computing, Communications and Applications 9(1), 2013. DOI 10.1145/2422956.2422957.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description>example 1</example_item_description>
+      <example_item_data><![CDATA[[U, V] = tessera.curl(24, 4, 1);
+quiver(U, V); axis equal tight]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item><link linkend="${tessera}tessera.perlin">tessera.perlin</link></see_also_item>
+    <see_also_item><link linkend="${tessera}tessera.domain_warp">tessera.domain_warp</link></see_also_item>
+  </see_also>
+  <history>
+    <history_item><history_version>1.0.0</history_version>
+      <history_description>initial version</history_description></history_item>
+  </history>
+  <authors><author_item>Allan CORNET</author_item></authors>
+</xmldoc>
